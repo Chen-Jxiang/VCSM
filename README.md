@@ -10,11 +10,14 @@ a common issue in this research area. VCSM treats the hazard prediction from eac
 To use this project, follow these steps:
 
 ### 1. Clone the repository:
+
 git clone https://github.com/Chen-Jxiang/VCSM.git
+
 cd VCSM
 
 ### 2. Create a virtual environment (optional but recommended):
 python -m venv VCSM
+
 source VCSM/bin/activate  # On Windows, use venv\Scripts\activate
 
 ### 3. Install PyTorch with CUDA support:
