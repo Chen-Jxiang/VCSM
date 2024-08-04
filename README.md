@@ -16,9 +16,9 @@ git clone https://github.com/Chen-Jxiang/VCSM.git
 cd VCSM
 
 ### 2. Create a virtual environment (optional but recommended):
-python -m venv VCSM
+python -m venv venv
 
-source VCSM/bin/activate  # On Windows, use venv\Scripts\activate
+source venv/bin/activate  # On Windows, use venv\Scripts\activate
 
 ### 3. Install PyTorch with CUDA support:
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
