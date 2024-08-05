@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 ## Data Extraction and Preparation
 
-### The image features extracted are provided in the `data/` directory. To download and decompress the clinical and omics data, use the following commands:
+The image features extracted are provided in the `data/` directory. To download and decompress the clinical and omics data, use the following commands:
 ### 1. Download the data files:
 wget -P ./data/ https://linkedomics.org/data_download/TCGA-SKCM/Human__TCGA_SKCM__MS__Clinical__Clinical__01_28_2016__BI__Clinical__Firehose.tsi<br/>
 wget -P ./data/ https://linkedomics.org/data_download/TCGA-SKCM/Human__TCGA_SKCM__UNC__RNAseq__HiSeq_RNA__01_28_2016__BI__Gene__Firehose_RSEM_log2.cct.gz<br/>
