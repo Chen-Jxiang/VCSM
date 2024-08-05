@@ -24,11 +24,14 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
 ### 4. Install all dependencies by running:
 pip install -r requirements.txt
 
-## Download and decompress the data
+## Data Extraction and Preparation
 
+### The image features extracted are provided in the `data/` directory. To download and decompress the clinical and omics data, use the following commands:
+### 1. Download the data files:
 wget -P ./data/ https://linkedomics.org/data_download/TCGA-SKCM/Human__TCGA_SKCM__MS__Clinical__Clinical__01_28_2016__BI__Clinical__Firehose.tsi<br/>
 wget -P ./data/ https://linkedomics.org/data_download/TCGA-SKCM/Human__TCGA_SKCM__UNC__RNAseq__HiSeq_RNA__01_28_2016__BI__Gene__Firehose_RSEM_log2.cct.gz<br/>
 wget -P ./data/ https://linkedomics.org/data_download/TCGA-SKCM/Human__TCGA_SKCM__JHU_USC__Methylation__Meth450__01_28_2016__BI__Gene__Firehose_Methylation_Prepocessor.cct.gz<br/>
-wget -P ./data/ https://linkedomics.org/data_download/TCGA-SKCM/Human__TCGA_SKCM__BDGSC__miRNASeq__HS_miR__01_28_2016__BI__Gene__Firehose_RPM_log2.cct<br/>
+wget -P ./data/ https://linkedomics.org/data_download/TCGA-SKCM/Human__TCGA_SKCM__BDGSC__miRNASeq__HS_miR__01_28_2016__BI__Gene__Firehose_RPM_log2.cct
+### 2.Decompress the gzipped files:
 gzip -d ./data/Human__TCGA_SKCM__UNC__RNAseq__HiSeq_RNA__01_28_2016__BI__Gene__Firehose_RSEM_log2.cct.gz<br/>
 gzip -d ./data/Human__TCGA_SKCM__JHU_USC__Methylation__Meth450__01_28_2016__BI__Gene__Firehose_Methylation_Prepocessor.cct.gz<br/>
