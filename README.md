@@ -59,6 +59,11 @@ The image features are provided in the `data/` directory. To download and decomp
    gzip -d ./data/Human__TCGA_SKCM__JHU_USC__Methylation__Meth450__01_28_2016__BI__Gene__Firehose_Methylation_Prepocessor.cct.gz
    ```
 
+3. Compte the p-values with the cox model:
+   ```bash
+   python ./src/compute_p.py
+   ```
+
 ## Training and Evaluating the VCSM Model
 
 ### Training
