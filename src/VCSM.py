@@ -39,7 +39,7 @@ class CoxModel(torch.nn.Module):
             filename (str): Base filename for saving model and logs.
         """
 
-        super(cox_model, self).__init__()        
+        super(CoxModel, self).__init__()        
         
         # Set random seeds for reproducibility
         np.random.seed(seed)
@@ -64,7 +64,7 @@ class CoxModel(torch.nn.Module):
         ])
         
         self.encoder_var = torch.nn.ModuleList([
-            FullyConnectedNet(D_dat[i], 1, encoder_var_layer, act='PRELU', dropout=dropout_encoder[i])
+            FullyConnectedNet(D_dat[i], 1, encoder_var_layer, act='PRELU')
             for i in range(self.n_views)
         ])
         
@@ -168,7 +168,7 @@ class CoxModel(torch.nn.Module):
 
         
         for v in range(self.n_views):
-            X_v = self.dropout(X[v])
+            X_v = X[v]
             
             mu_v = self.encoder_mu[v](X_v)
             logvar_v = self.encoder_var[v](X_v)
@@ -257,8 +257,7 @@ class CoxModel(torch.nn.Module):
                 print(txt)
             f.write(txt)
             
-            print(self.compute_C(X_test, D_test, E_test))
-            print(self.compute_C_view(X_test, D_test, E_test))
+            print("Concordance Index:", self.compute_C(X_test, D_test, E_test))
             
             # Validate and potentially save model
             if step % self.N_validate == self.N_validate - 1:
