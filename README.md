@@ -20,25 +20,25 @@ VCSM treats the hazard prediction from each data view (i.e., each type of data) 
 Follow these steps to set up the project:
 
 1. Clone the repository:
-   ```
+   ```bash
    git clone https://github.com/Chen-Jxiang/VCSM.git
    cd VCSM
    ```
 
 2. Create a virtual environment (optional but recommended):
-   ```
+   ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows, use venv\Scripts\activate
    ```
 
 3. Install PyTorch with CUDA support:
-   ```
+   ```bash
    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
    ```
 
 4. Install all dependencies:
-   ```
-   pip install -r requirements.txt
+   ```bash
+   pip3 install -r requirements.txt
    ```
 
 ## Data Extraction and Preparation
@@ -46,7 +46,7 @@ Follow these steps to set up the project:
 The image features are provided in the `data/` directory. To download and decompress the clinical and omics data, use the following commands:
 
 1. Download the data files:
-   ```
+   ```bash
    wget -P ./data/ https://linkedomics.org/data_download/TCGA-SKCM/Human__TCGA_SKCM__MS__Clinical__Clinical__01_28_2016__BI__Clinical__Firehose.tsi
    wget -P ./data/ https://linkedomics.org/data_download/TCGA-SKCM/Human__TCGA_SKCM__UNC__RNAseq__HiSeq_RNA__01_28_2016__BI__Gene__Firehose_RSEM_log2.cct.gz
    wget -P ./data/ https://linkedomics.org/data_download/TCGA-SKCM/Human__TCGA_SKCM__JHU_USC__Methylation__Meth450__01_28_2016__BI__Gene__Firehose_Methylation_Prepocessor.cct.gz
@@ -54,7 +54,7 @@ The image features are provided in the `data/` directory. To download and decomp
    ```
 
 2. Decompress the gzipped files:
-   ```
+   ```bash
    gzip -d ./data/Human__TCGA_SKCM__UNC__RNAseq__HiSeq_RNA__01_28_2016__BI__Gene__Firehose_RSEM_log2.cct.gz
    gzip -d ./data/Human__TCGA_SKCM__JHU_USC__Methylation__Meth450__01_28_2016__BI__Gene__Firehose_Methylation_Prepocessor.cct.gz
    ```
