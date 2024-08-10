@@ -33,6 +33,9 @@ def train_model(lr,
         seed (int): Random seed
         n_step, stop_step, min_step (int): Training step parameters
     """    
+
+    np.random.seed(0)
+    torch.random.manual_seed(0)
     
     # Create models directory if it doesn't exist
     os.makedirs("./models/", exist_ok=True)
