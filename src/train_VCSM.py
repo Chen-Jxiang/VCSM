@@ -47,7 +47,14 @@ def train_model(lr,
     seed = seed, 
     top_K_img = top_K_img, top_K_RNA = top_K_RNA, top_K_meth = top_K_meth, top_K_miRNA = top_K_miRNA)
 
+    X_train = [XXX.cuda() for XXX in X_train]
+    D_train = D_train.cuda()
+    E_train = E_train.cuda()
+    X_test = [XXX.cuda() for XXX in X_test]
+    D_test = D_test.cuda()
+    E_test = E_test.cuda()
 
+    
     # Initialize the model
     model = VCSM.CoxModel(
         D_dat=[x.shape[1] for x in X_train], 
