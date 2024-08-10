@@ -19,6 +19,9 @@ def compute_p_values(view, seed):
     :param seed: Random seed for data splitting
     :return: List of p-values
     """
+
+    np.random.seed(0)
+    
     p_values = []
     
     # Load data for the current seed
